@@ -3,6 +3,7 @@ from torchvision.datasets import ImageFolder
 
 class ArtBench10Train(ImageFolder):
     def __init__(self, **kwargs):
+        print(kwargs)
         super().__init__(root="data/artbench/train", **kwargs)
 
 
