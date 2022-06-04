@@ -30,7 +30,9 @@ class PrepDataset(ImageFolder):
 
     def __getitem__(self, i):
         example = dict()
-        example["image"] = self.preprocess_image(super().__getitem__(i))
+        ele = super().__getitem__(i)
+        print(ele)
+        example["image"] = self.preprocess_image(ele)
         for k in self.labels:
             example[k] = self.labels[k][i]
         return example
