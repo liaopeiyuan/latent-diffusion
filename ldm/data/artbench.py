@@ -2,13 +2,11 @@ from torchvision.datasets import ImageFolder
 import numpy as np
 import albumentations
 class PrepDataset(ImageFolder):
-    def __init__(self, root, **kwargs):
+    def __init__(self, root, size=None, random_crop=False, labels=None, **kwargs):
         self.size = size
         self.random_crop = random_crop
 
         self.labels = dict() if labels is None else labels
-        self.labels["file_path_"] = paths
-        self._length = len(paths)
 
         if self.size is not None and self.size > 0:
             self.rescaler = albumentations.SmallestMaxSize(max_size = self.size)
