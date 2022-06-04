@@ -30,11 +30,10 @@ class PrepDataset(ImageFolder):
 
     def __getitem__(self, i):
         example = dict()
-        ele = super().__getitem__(i)
+        ele, label = super().__getitem__(i)
         print(ele)
         example["image"] = self.preprocess_image(ele)
-        for k in self.labels:
-            example[k] = self.labels[k][i]
+        example["class_label"] = label
         return example
 
 class ArtBench10Train(PrepDataset):
