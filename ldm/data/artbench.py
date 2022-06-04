@@ -22,7 +22,7 @@ class PrepDataset(ImageFolder):
 
 
 
-    def preprocess_image(self, image_path):
+    def preprocess_image(self, image):
         image = np.array(image).astype(np.uint8)
         image = self.preprocessor(image=image)["image"]
         image = (image/127.5 - 1.0).astype(np.float32)
