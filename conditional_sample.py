@@ -21,7 +21,7 @@ def load_model_from_config(config, ckpt):
 
 def get_model():
     config = OmegaConf.load("configs/latent-diffusion/artbench-conditional-ldm-vq-f8.yaml")  
-    model = load_model_from_config(config, "/study-temp/alpaca/ldms/model.ckpt")
+    model = load_model_from_config(config, "/study-temp/alpaca/ldms/2022-06-04T23-40-07_artbench-conditional-ldm-vq-f8/checkpoints/epoch=000021.ckpt")
     return model
 
 from ldm.models.diffusion.ddim import DDIMSampler
