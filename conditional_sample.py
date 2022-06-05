@@ -60,7 +60,7 @@ with torch.no_grad():
             samples_ddim, _ = sampler.sample(S=ddim_steps,
                                              conditioning=c,
                                              batch_size=n_samples_per_class,
-                                             shape=[3, 64, 64],
+                                             shape=[3, 32, 32],
                                              verbose=False,
                                              unconditional_guidance_scale=scale,
                                              unconditional_conditioning=uc, 
