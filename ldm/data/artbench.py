@@ -34,6 +34,7 @@ class PrepDataset(ImageFolder):
         #print(ele)
         example["image"] = self.preprocess_image(ele)
         example["class_label"] = label
+        example["human_label"] = label
         return example
 
 class ArtBench10Train(PrepDataset):
